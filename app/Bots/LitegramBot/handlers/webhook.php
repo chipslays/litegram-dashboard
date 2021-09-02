@@ -5,8 +5,8 @@ use Litegram\Debug\Payloads;
 
 require __DIR__ . '/../autoload.php';
 
-// $bot->webhook();
-$bot->webhook(Payloads::START);
+$bot->webhook();
+// $bot->webhook(Payloads::START);
 
 $bot->plugins($plugins);
 
