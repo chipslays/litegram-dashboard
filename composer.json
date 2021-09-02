@@ -1,11 +1,11 @@
 {
-    "name": "laravel/laravel",
+    "name": "chipslays/litegram-dashboard",
     "type": "project",
-    "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "description": "Ready-to-use dashboard bots manager based on Litegram library.",
+    "keywords": ["litegram", "dashboard", "telegram", "bot"],
     "license": "MIT",
     "require": {
-        "php": "^7.3|^8.0",
+        "php": "^7.4",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^8.54",
