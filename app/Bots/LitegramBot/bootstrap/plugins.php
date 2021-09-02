@@ -10,14 +10,12 @@ use Litegram\Plugins\Talk;
 use Litegram\Plugins\User;
 
 return [
-    'plugins' => [
-        // Database::class,
-        // User::class,
-        Storage::class,
-        Session::class,
-        Localization::class,
-        Logger::class,
-        // Talk::class,
-        // Cache::class,
-    ],
+    // Database::class,
+    // User::class,
+    Storage::class,
+    Session::class,
+    Localization::class,
+    Logger::class,
+    // Talk::class,
+    // Cache::class,
 ];
