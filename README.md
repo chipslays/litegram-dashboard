@@ -1,4 +1,4 @@
-# 🍃 [WIP] Litegram Dashboard
+# 🎛 [WIP] Litegram Dashboard
 
 Ready-to-use dashboard bots manager based on Litegram library.
 
