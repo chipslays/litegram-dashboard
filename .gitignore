@@ -13,5 +13,9 @@ npm-debug.log
 yarn-error.log
 /.idea
 /.vscode
+
+# Litegram
 /app/Bots/*
 !/app/Bots/LitegramBot
+/public/webhooks/*
+!/public/webhooks/LitegramBot.php
