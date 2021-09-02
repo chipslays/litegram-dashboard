@@ -1,0 +1,11 @@
+{
+    "name": "chipslays/litegram-dashboard",
+    "type": "project",
+    "license": "MIT",
+    "require": {
+        "chipslays/litegram": "^3"
+    },
+    "autoload": {
+        "classmap": ["app/controllers"]
+    }
+}

@@ -1,0 +1,9 @@
+.vscode
+vendor
+composer.lock
+
+storage/bot/logs/*
+!storage/bot/logs/.gitkeep
+
+storage/bot/store/*
+!storage/bot/store/.gitkeep
