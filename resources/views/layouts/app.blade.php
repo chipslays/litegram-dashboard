@@ -34,7 +34,7 @@
 <body class="bg-gray-50 text-gray-800">
 
     <section class="flex relative w-screen">
-        <aside class="w-64 bg-white text-gray-800 h-screen border-r border-gray-100 z-20">
+        <aside class="hidden md:block flex-shrink-0 w-64 bg-white text-gray-800 h-screen border-r border-gray-100 z-20">
 
             {{-- logo --}}
             <div class="h-16 text-center uppercase font-extrabold text-lg p-4 border-b border-gray-100 flex items-center">
@@ -45,7 +45,22 @@
 
             {{-- sidebar navigation --}}
             <div class="">
-                <div class="p-4 space-y-2">
+                <div class="p-4">
+                    <button class="text-sm rounded-md bg-gray-50 p-4 w-full hover:bg-gray-100 transition duration-100">
+                        <div class="flex items-center justify-between">
+                            <div class="font-medium">
+                                LitegramBot
+                            </div>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </div>
+                    </button>
+                </div>
+
+                <hr class="border-gray-100">
+
+                <div class="p-4 space-y-3">
                     <div class="text-xs uppercase text-gray-400 font-medium">
                         Общее
                     </div>
@@ -90,7 +105,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="p-4 space-y-2">
+                <div class="p-4 space-y-3">
                     <div class="text-xs uppercase text-gray-400 font-medium">
                         Разработка
                     </div>
@@ -125,7 +140,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="p-4 space-y-2">
+                <div class="p-4 space-y-3">
                     <div class="text-xs uppercase text-gray-400 font-medium">
                         Управление
                     </div>
@@ -163,7 +178,7 @@
 
             {{-- content --}}
             <main class="p-4 overflow-y-auto">
-               content
+               @yield('content')
             </main>
         </div>
     </section>
