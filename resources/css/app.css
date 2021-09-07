@@ -1,0 +1,25 @@
+html {
+    font-family: "Rubik", sans-serif !important;
+}
+
+[x-cloak] {
+    display: none !important;
+}
+
+select {
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    background: transparent;
+    background-image: url('data:image/svg+xml;utf8,<svg width="16" height="16" fill="none" stroke="gray" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>');
+    background-repeat: no-repeat;
+    background-position-x: 98%;
+    background-position-y: 50%;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

@@ -31,7 +31,51 @@
     @yield('styles')
 </head>
 
-<body>
+<body class="bg-gray-50 text-gray-800">
+
+    <section class="flex relative w-screen">
+        <aside class="w-64 bg-gray-800 text-gray-200 h-screen border-r border-gray-700">
+
+            {{-- logo --}}
+            <div class="h-16 text-center uppercase font-extrabold text-lg p-4 border-b border-gray-700 flex items-center">
+               <div>
+                    Dashboard
+               </div>
+            </div>
+
+            {{-- sidebar navigation --}}
+            <div class="">
+
+            </div>
+        </aside>
+
+        <div class="h-screen flex flex-col w-full flex-1">
+            <header class="h-16 bg-white border-b border-gray-100 flex justify-between items-center p-4">
+                {{-- header: left --}}
+                <div>
+                    <div>
+                        left
+                    </div>
+                </div>
+
+                {{-- header: right --}}
+                <div>
+                    <div>
+                        right
+                    </div>
+                </div>
+            </header>
+
+            {{-- content --}}
+            <main class="p-8 overflow-y-auto">
+               content
+            </main>
+        </div>
+    </section>
+
+
+
+
 
     <script src="{{ mix('/js/app.js') }}"></script>
 
@@ -43,7 +87,6 @@
         $(function () {
 
         });
-
     </script>
 
     @yield('scripts')
