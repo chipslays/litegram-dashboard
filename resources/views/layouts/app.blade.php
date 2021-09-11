@@ -29,6 +29,8 @@
     </style>
 
     @yield('styles')
+
+    @livewireStyles
 </head>
 
 <body class="bg-gray-50 text-gray-800">
@@ -44,7 +46,7 @@
             </div>
 
             {{-- sidebar navigation --}}
-            <div class="">
+            <div class="overflow-y-auto max-h-screen">
                 <div class="p-4">
                     <button class="text-sm rounded-md bg-gray-50 p-4 w-full hover:bg-gray-100 transition duration-100">
                         <div class="flex items-center justify-between">
@@ -171,7 +173,7 @@
                 {{-- header: right --}}
                 <div>
                     <div>
-                        right
+                        <button class="w-10 h-10 font-medium rounded-full bg-blue-500 text-blue-50 flex items-center justify-center text-sm">ЧЛ</button>
                     </div>
                 </div>
             </header>
@@ -192,6 +194,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
         integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    @livewireScripts
 
     <script>
         $(function () {

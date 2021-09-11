@@ -16,3 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('pages.index');
 });
+
+Route::get('/messages', function () {
+    return view('screens.messages');
+})->name('screens.messages');
+
+Route::get('/auth', function () {
+    return view('pages.auth');
+})->name('auth');
