@@ -1,8 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-
-
 <div class="mt-4 space-x-4">
     <div class="grid grid-cols-4 gap-4 ">
         <div class="card card-body space-y-4 col-span-2">
@@ -155,6 +153,4 @@
         </div>
     </div>
 </div>
-
-
 @endsection
