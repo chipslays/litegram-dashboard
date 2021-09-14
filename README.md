@@ -1,6 +1,8 @@
 # 🎛 [WIP] Litegram Dashboard
 
-Ready-to-use dashboard bots manager based on Litegram library.
+Ready-to-use dashboard bots manager based on [Litegram](https://github.com/chipslays/litegram) library.
+
+> **WIP:** This project is under development and not ready for use even as a dev version. 
 
 ## Installation
 
