@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b19d6cc112431fe235243b98cf20329c",
+    "content-hash": "4ae971fe774f6b6fa883179b46ee2d63",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -121,6 +121,95 @@
                 }
             ],
             "time": "2021-08-15T20:50:18+00:00"
+        },
+        {
+            "name": "chipslays/array",
+            "version": "1.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/chipslays/array.git",
+                "reference": "790b91a9f0ef58e9235ccceea6461d80fe953e5a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/chipslays/array/zipball/790b91a9f0ef58e9235ccceea6461d80fe953e5a",
+                "reference": "790b91a9f0ef58e9235ccceea6461d80fe953e5a",
+                "shasum": ""
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^9.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Chipslays\\Arr\\": "src/"
+                },
+                "files": [
+                    "helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "chipslays",
+                    "email": "hello@chipslays.ru"
+                }
+            ],
+            "description": "Library for array manipulate.",
+            "support": {
+                "issues": "https://github.com/chipslays/array/issues",
+                "source": "https://github.com/chipslays/array/tree/1.1.2"
+            },
+            "time": "2021-07-03T10:42:15+00:00"
+        },
+        {
+            "name": "chipslays/collection",
+            "version": "1.1.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/chipslays/collection.git",
+                "reference": "d277f1002676de33fb2214e8e07ce062bc8ad5e4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/chipslays/collection/zipball/d277f1002676de33fb2214e8e07ce062bc8ad5e4",
+                "reference": "d277f1002676de33fb2214e8e07ce062bc8ad5e4",
+                "shasum": ""
+            },
+            "require": {
+                "chipslays/array": "^1.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^9.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Chipslays\\Collection\\": "src/"
+                },
+                "files": [
+                    "helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "chipslays",
+                    "email": "hello@chipslays.ru"
+                }
+            ],
+            "description": "Library for manipulating array as collection.",
+            "support": {
+                "issues": "https://github.com/chipslays/collection/issues",
+                "source": "https://github.com/chipslays/collection/tree/1.1.3"
+            },
+            "time": "2021-08-22T19:26:57+00:00"
         },
         {
             "name": "dflydev/dot-access-data",
