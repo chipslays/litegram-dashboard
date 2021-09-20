@@ -9,17 +9,36 @@
 
     {{-- sidebar navigation --}}
     <div class="overflow-y-auto max-h-screen">
-        <div class="p-4">
-            <button class="text-sm rounded-md bg-gray-50 p-4 w-full hover:bg-gray-100 transition duration-100">
-                <div class="flex items-center justify-between">
-                    <div class="font-medium">
-                        LitegramBot
+        <div @click.away="dropdown = false" x-data="{ dropdown: false }" class="relative">
+            <div class="p-4 relative">
+                <button @click="dropdown = !dropdown" class="text-sm bg-gray-50 p-4 w-full rounded-md hover:bg-gray-100 transition duration-100">
+                    <div class="flex items-center justify-between">
+                        <div class="font-medium">
+                            {{ app('bot')->current }}
+                        </div>
+                        <svg :class="{'rotate-180': dropdown, 'rotate-0': !dropdown}" xmlns="http://www.w3.org/2000/svg" class="transform duration-200 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
                     </div>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                    </svg>
+                </button>
+                <div x-cloak x-show="dropdown"
+                        x-transition:enter="transition-transform transition-opacity ease-out duration-100"
+                        x-transition:enter-start="opacity-0 transform -translate-y-2"
+                        x-transition:enter-end="opacity-100 transform translate-y-0"
+                        x-transition:leave="transition ease-in duration-100"
+                        x-transition:leave-end="opacity-0 transform -translate-y-3"
+                        class="absolute mt-2 w-full left-0 px-4">
+                        <div class="shadow-2xs p-2 bg-white dark:bg-gray-700 rounded-md border border-gray-100 space-y-2">
+                                @foreach (app('bot')->list as $username)
+                                    @if (app('bot')->current == $username)
+                                    <a href="{{ route(request()->route()->getName(), ['bot' => $username]) }}" class="sidebar-item-selected">{{ $username }}</a>
+                                    @else
+                                    <a href="{{ route(request()->route()->getName(), ['bot' => $username]) }}" class="sidebar-item">{{ $username }}</a>
+                                    @endif
+                                @endforeach
+                        </div>
                 </div>
-            </button>
+            </div>
         </div>
 
         <hr class="border-gray-100">
@@ -28,7 +47,7 @@
             <div class="text-xs uppercase text-gray-400 font-medium">
                 Общее
             </div>
-            <a href="{{ route('pages.index') }}" class="{{ request()->routeIs('pages.index') ? 'sidebar-item-selected' : 'sidebar-item' }}">
+            <a href="{{ route('pages.index', ['bot' => app('bot')->current]) }}" class="{{ request()->routeIs('pages.index') ? 'sidebar-item-selected' : 'sidebar-item' }}">
                 <div class="flex items-center space-x-3">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
@@ -38,7 +57,7 @@
                     </div>
                 </div>
             </a>
-            <a href="{{ route('screens.messages') }}" class="{{ request()->routeIs('screens.messages') ? 'sidebar-item-selected' : 'sidebar-item' }}">
+            <a href="{{ route('screens.messages', ['bot' => app('bot')->current]) }}" class="{{ request()->routeIs('screens.messages') ? 'sidebar-item-selected' : 'sidebar-item' }}">
                 <div class="flex items-center space-x-3">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
@@ -48,7 +67,7 @@
                     </div>
                 </div>
             </a>
-            <a href="#" class="sidebar-item">
+            <a href="{{ route('screens.users', ['bot' => app('bot')->current]) }}" class="{{ request()->routeIs('screens.users') ? 'sidebar-item-selected' : 'sidebar-item' }}">
                 <div class="flex items-center space-x-3">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />

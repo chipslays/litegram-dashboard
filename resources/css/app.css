@@ -80,7 +80,7 @@ select::-ms-expand {
 
 /* input */
 .input {
-    @apply text-gray-600 border-2 border-gray-100 placeholder-gray-300 focus:outline-none text-sm rounded-md p-2 focus:ring-2 focus:ring-gray-500 focus:ring-opacity-10 duration-100 transition bg-white !important;
+    @apply text-gray-600 border border-gray-100 placeholder-gray-300 focus:outline-none text-sm rounded-md p-2 focus:ring-2 focus:ring-gray-500 focus:ring-opacity-10 duration-100 transition bg-white !important;
 }
 
 .input-blue {
@@ -128,6 +128,15 @@ select::-ms-expand {
 }
 .checkbox-gray {
     @apply checkbox-base text-gray-500 hover:text-gray-600;
+}
+
+/* sidebar */
+.sidebar-item {
+    @apply p-2 rounded-md inline-block w-full text-sm text-gray-400 hover:bg-gray-100 transition duration-100 px-6;
+}
+
+.sidebar-item-selected {
+    @apply p-2 rounded-md bg-blue-500 bg-opacity-30 hover:bg-opacity-40 inline-block w-full text-sm text-blue-700 font-medium px-6 transition duration-100;
 }
 
 @tailwind utilities;
