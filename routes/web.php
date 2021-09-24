@@ -15,11 +15,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('pages.index');
-});
+})->name('pages.index');
 
 Route::get('/messages', function () {
     return view('screens.messages');
 })->name('screens.messages');
+
+Route::get('/users', function () {
+    return view('screens.users');
+})->name('screens.users');
 
 Route::get('/auth', function () {
     return view('pages.auth');
