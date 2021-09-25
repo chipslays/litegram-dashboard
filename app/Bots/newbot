@@ -1,0 +1,83 @@
+#!/usr/bin/env php
+<?php
+
+/**
+ * Cli helper for creating new bot project.
+ * Use: `php newbot`
+ */
+
+$username = ask('Type the username of the new bot:');
+
+if (file_exists(__DIR__ . '/' . $username)) {
+    die('Bot with this username already exists.');
+}
+
+recurseCopy(__DIR__ . '/LitegramBot', __DIR__ . '/' . $username);
+
+echo "Install composer dependies..." . PHP_EOL;
+passthru("cd {$username} && composer install");
+
+$createWebhookFile = strtolower(trim(ask("Create webhook file? [Y/n]")));
+if ($createWebhookFile == 'y' || $createWebhookFile == '') {
+    passthru("php {$username}/lite webhook:file");
+} else {
+    echo "No" . PHP_EOL;
+}
+
+echo "-----------------------------" . PHP_EOL;
+echo "🎉 Bot successfully created." . PHP_EOL;
+
+// helpers
+function ask(string $text): string
+{
+    echo $text . PHP_EOL . '> ';
+    return trim(fgets(STDIN));
+}
+
+function recurseCopy(
+    string $sourceDirectory,
+    string $destinationDirectory,
+    string $childFolder = ''
+): void {
+    $directory = opendir($sourceDirectory);
+
+    if (is_dir($destinationDirectory) === false) {
+        mkdir($destinationDirectory);
+    }
+
+    if ($childFolder !== '') {
+        if (is_dir("$destinationDirectory/$childFolder") === false) {
+            mkdir("$destinationDirectory/$childFolder");
+        }
+
+        while (($file = readdir($directory)) !== false) {
+            if ($file === '.' || $file === '..') {
+                continue;
+            }
+
+            if (is_dir("$sourceDirectory/$file") === true) {
+                recurseCopy("$sourceDirectory/$file", "$destinationDirectory/$childFolder/$file");
+            } else {
+                copy("$sourceDirectory/$file", "$destinationDirectory/$childFolder/$file");
+            }
+        }
+
+        closedir($directory);
+
+        return;
+    }
+
+    while (($file = readdir($directory)) !== false) {
+        if ($file === '.' || $file === '..') {
+            continue;
+        }
+
+        if (is_dir("$sourceDirectory/$file") === true) {
+            recurseCopy("$sourceDirectory/$file", "$destinationDirectory/$file");
+        } else {
+            copy("$sourceDirectory/$file", "$destinationDirectory/$file");
+        }
+    }
+
+    closedir($directory);
+}
