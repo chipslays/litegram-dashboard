@@ -17,5 +17,6 @@ yarn-error.log
 # Litegram
 /app/Bots/*
 !/app/Bots/LitegramBot
+!/app/Bots/newbot
 /public/webhooks/*
 !/public/webhooks/LitegramBot.php

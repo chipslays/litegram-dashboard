@@ -54,12 +54,12 @@ switch ($argv[1] ?? null) {
         break;
 
     default:
-    Cli::line("{cyan}Commands:
+        Cli::line("{cyan}List of available commands:{reset}{green}
+    - php lite polling          [Start long-polling]
     - php lite migrate:up       [Create tables]
     - php lite migrate:down     [Drop tables]
     - php lite webhook:set      [Set webhook]
     - php lite webhook:delete   [Delete webhook]
-    - php lite webhook:info     [Get webhook info]
-    - php lite webhook:file     [Make webhook file]");
-        break;
+    - php lite webhook:info     [Get webhook info]");
+            break;
 }
