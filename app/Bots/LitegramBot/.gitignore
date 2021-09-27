@@ -8,7 +8,5 @@ storage/bot/logs/*
 storage/bot/store/*
 !storage/bot/store/.gitkeep
 
-config/bot.php
-
-public/css/app.css
-public/js/app.js
+storage/bot/errors/*
+!storage/bot/errors/.gitkeep

@@ -14,6 +14,7 @@ return [
     // User::class,
     Storage::class,
     Session::class,
+    State::class,
     Localization::class,
     Logger::class,
     // Talk::class,

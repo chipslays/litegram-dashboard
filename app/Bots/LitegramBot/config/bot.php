@@ -3,7 +3,7 @@
 return [
     'bot' => [
         'token' => '1234567890:BOT_TOKEN',
-        'handler' => 'https://example.com/weebhoks/LitegramBot.php',
+        'handler' => 'https://example.com/webhooks/LitegramBot.php',
         'name' => 'Litegram',
         'username' => 'litegram_bot',
         'timezone' => 'Europe/Samara',
@@ -19,6 +19,12 @@ return [
             'chipslays' => 'password',
             '436432850' => 'password',
         ],
+    ],
+    'errors' => [
+        'path' => __DIR__ . '/../storage/bot/errors',
+        'telegram' => true,
+        'php' => true,
+        'php_level' => E_ALL,
     ],
     'plugins' => [
         'storage' => [
@@ -84,8 +90,8 @@ return [
         ],
         'logger' => [
             'path' => __DIR__ . '/../storage/bot/logs',
-            'payload_log' => false,
-            'errors_log' => false,
+            'payload_log' => true,
+            'errors_log' => true,
             'pastly' => [
                 'token' => '1627406735:rO0jr-wMn5ZleI6hiKfKQ4aJZyYFaKN5TDoWmj-5V2',
                 'title' => 'Litegram Log',
