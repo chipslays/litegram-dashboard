@@ -8,6 +8,7 @@ use Litegram\Plugins\Session;
 use Litegram\Plugins\Storage;
 use Litegram\Plugins\Talk;
 use Litegram\Plugins\User;
+use Litegram\Plugins\State;
 
 return [
     // Database::class,
