@@ -10,6 +10,10 @@ return [
         'timelimit' => 120,
         'version' => '1.0.0',
     ],
+    'telegram' => [
+        'parse_mode' => 'html',
+        'safe_callback' => true,
+    ],
     'debug' => [
         'enable' => true,
         'developer' => '436432850',
