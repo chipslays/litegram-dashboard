@@ -95,7 +95,7 @@ return [
         'logger' => [
             'path' => __DIR__ . '/../storage/bot/logs',
             'payload_log' => true,
-            'errors_log' => true,
+            'collect_messages' => true,
             'pastly' => [
                 'token' => '1627406735:rO0jr-wMn5ZleI6hiKfKQ4aJZyYFaKN5TDoWmj-5V2',
                 'title' => 'Litegram Log',
