@@ -27,6 +27,7 @@ return [
     'errors' => [
         'path' => __DIR__ . '/../storage/bot/errors',
         'telegram' => true,
+        'telegram_output' => false,
         'php' => true,
         'php_level' => E_ALL,
     ],
